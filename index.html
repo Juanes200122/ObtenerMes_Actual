@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtener el mes actual</title>
+</head>
+<body>
+    <div>
+        <div class="cargar5">Mes actual: <span id="mes"></span></div>
+    </div>
+    <script> function actualizarMes() {
+            var nombresMeses = [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+            // Obtener la fecha actual
+            var fechaActual = new Date();
+            // Obtener el mes (0-11) y buscar el nombre correspondiente en el array
+            var mesActual = nombresMeses[fechaActual.getMonth()];
+            document.getElementById('mes').textContent = mesActual;
+        }
+        // Llamar a la función para actualizar el mes inicialmente
+        actualizarMes();
+        setInterval(actualizarMes, 1000);
+    </script>
+</body>
+</html>
